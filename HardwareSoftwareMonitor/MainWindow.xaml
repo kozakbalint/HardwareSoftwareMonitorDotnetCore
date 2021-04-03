@@ -5,5 +5,74 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HardwareSoftwareMonitor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" MinHeight="700" MinWidth="800">
+    <TabControl>
+        <TabItem Header="Hardware Infos">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*"></ColumnDefinition>
+                    <ColumnDefinition Width="50*"></ColumnDefinition>
+                    <ColumnDefinition Width="50*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50*"></RowDefinition>
+                    <RowDefinition Height="50*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <!--CPU-->
+                <Label Content="CPU:" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="18"/>
+                <ComboBox HorizontalAlignment="Left" Margin="132,16,0,0" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Name:" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top" FontSize="14"/>
+                <Label Content="Manufacturer:" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top" FontSize="14"/>
+                <Label Content="Cores:" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="10,102,0,0" VerticalAlignment="Top" FontSize="14"/>
+                <Label Content="Thread:" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="10,131,0,0" VerticalAlignment="Top" FontSize="14"/>
+                <Label Content="Max Clock Speed:" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top" FontSize="14"/>
+                <Label Content="Current Clock Speed:" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="10,189,0,0" VerticalAlignment="Top" FontSize="14"/>
+                <Label Content="Load Percentage:" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="10,218,0,0" VerticalAlignment="Top" FontSize="14"/>
+
+                <!--GPU-->
+                <Label Content="GPU:" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="18"/>
+                <ComboBox HorizontalAlignment="Left" Margin="132,16,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                <Label Content="Name:" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top" FontSize="14"/>
+                <Label Content="VRAM:" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top" FontSize="14"/>
+                <Label Content="Resolution:" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Margin="10,102,0,0" VerticalAlignment="Top" FontSize="14"/>
+                <Label Content="Refresh Rate:" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Margin="10,131,0,0" VerticalAlignment="Top" FontSize="14"/>
+
+                <!--RAM-->
+                <Label Content="RAM:" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="18"/>
+                <ComboBox HorizontalAlignment="Left" Margin="133,16,0,0" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+                <Label Content="Name:" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top" FontSize="14"/>
+                <Label Content="Manufacturer:" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top" FontSize="14"/>
+                <Label Content="Model:" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" Margin="10,102,0,0" VerticalAlignment="Top" FontSize="14"/>
+                <Label Content="Speed:" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" Margin="10,131,0,0" VerticalAlignment="Top" FontSize="14"/>
+
+                <!--MotherBoard-->
+                <Label Content="MotherBoard:" Grid.Row="1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="18"/>
+                <Label Content="Manufacturer:" Grid.Row="1" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top" FontSize="14"/>
+                <Label Content="Product:" Grid.Row="1" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top" FontSize="14"/>
+                <Label Content="Primary Bus Type:" Grid.Row="1" HorizontalAlignment="Left" Margin="10,102,0,0" VerticalAlignment="Top" FontSize="14"/>
+
+
+                <!--Disks-->
+                <Label Content="Disks:" Grid.Row="1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="18" Grid.Column="1"/>
+                <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="132,16,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Manufacturer:" Grid.Row="1" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top" FontSize="14" Grid.Column="1"/>
+                <Label Content="Interface:" Grid.Row="1" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top" FontSize="14" Grid.Column="1"/>
+                <Label Content="Size:" Grid.Row="1" HorizontalAlignment="Left" Margin="10,102,0,0" VerticalAlignment="Top" FontSize="14" Grid.Column="1"/>
+
+                <!--Drives-->
+                <Label Content="Drives:" Grid.Row="1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="18" Grid.Column="2"/>
+                <ComboBox Grid.Column="2" HorizontalAlignment="Left" Margin="133,16,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Root Directory:" Grid.Row="1" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top" FontSize="14" Grid.Column="2"/>
+                <Label Content="File System:" Grid.Row="1" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top" FontSize="14" Grid.Column="2"/>
+                <Label Content="Total Size:" Grid.Row="1" HorizontalAlignment="Left" Margin="10,102,0,0" VerticalAlignment="Top" FontSize="14" Grid.Column="2"/>
+                <Label Content="Available Space:" Grid.Row="1" HorizontalAlignment="Left" Margin="10,131,0,0" VerticalAlignment="Top" FontSize="14" Grid.Column="2"/>
+
+            </Grid>
+        </TabItem>
+        <TabItem Header="Software List">
+
+        </TabItem>
+
+    </TabControl>
 </Window>
