@@ -71,7 +71,20 @@
             </Grid>
         </TabItem>
         <TabItem Header="Software List">
-
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"></RowDefinition>
+                    <RowDefinition Height="80*"></RowDefinition>
+                    <RowDefinition Height="10*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Content="Installed Applications:" HorizontalAlignment="Left" Margin="10,22,0,0" VerticalAlignment="Top" FontSize="18"/>
+                <DataGrid Grid.Row="1" Margin="10,0,10,0">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Name" Width="80*"/>
+                        <DataGridTextColumn Header="Version" Width="20*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
         </TabItem>
 
     </TabControl>
