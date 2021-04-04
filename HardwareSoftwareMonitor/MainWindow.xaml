@@ -26,9 +26,6 @@
                 <Label Content="Manufacturer:" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top" FontSize="14"/>
                 <Label Content="Cores:" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="10,102,0,0" VerticalAlignment="Top" FontSize="14"/>
                 <Label Content="Thread:" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="10,131,0,0" VerticalAlignment="Top" FontSize="14"/>
-                <Label Content="Max Clock Speed:" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top" FontSize="14"/>
-                <Label Content="Current Clock Speed:" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="10,189,0,0" VerticalAlignment="Top" FontSize="14"/>
-                <Label Content="Load Percentage:" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="10,218,0,0" VerticalAlignment="Top" FontSize="14"/>
 
                 <!--GPU-->
                 <Label Content="GPU:" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="18"/>
@@ -78,14 +75,37 @@
                     <RowDefinition Height="10*"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Label Content="Installed Applications:" HorizontalAlignment="Left" Margin="10,22,0,0" VerticalAlignment="Top" FontSize="18"/>
-                <DataGrid Grid.Row="1" Margin="10,0,10,0">
+                <DataGrid x:Name="softDG" Grid.Row="1" Margin="10,0,10,0" AutoGenerateColumns="False">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Name" Width="80*"/>
-                        <DataGridTextColumn Header="Version" Width="20*"/>
+                        <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}" Width="80*"/>
+                        <DataGridTextColumn Header="Version" Binding="{Binding Path=Version}" Width="20*"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
         </TabItem>
+        <TabItem Header="Sensor Values">
+            <ScrollViewer>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*"></ColumnDefinition>
+                        <ColumnDefinition Width="50*"></ColumnDefinition>
+                        <ColumnDefinition Width="50*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50*"></RowDefinition>
+                        <RowDefinition Height="50*"></RowDefinition>
+                    </Grid.RowDefinitions>
 
+                <!--CPU
+                <Label Content="CPU:" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="18"/>
+                <ComboBox HorizontalAlignment="Left" Margin="132,16,0,0" VerticalAlignment="Top" Width="120"/>-->
+
+                <!--GPU
+                <Label Content="GPU:" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="18"/>
+                <ComboBox HorizontalAlignment="Left" Margin="132,16,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>-->
+
+                </Grid>
+            </ScrollViewer>
+        </TabItem>
     </TabControl>
 </Window>
