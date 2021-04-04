@@ -24,23 +24,23 @@ namespace HardwareSoftwareMonitor.src
             set { fileSystem = value; }
         }
 
-        private int totalSize;
+        private long totalSize;
 
-        public int TotalSize
+        public long TotalSize
         {
             get { return totalSize; }
             set { totalSize = value; }
         }
 
-        private int availableSpace;
+        private long availableSpace;
 
-        public int AvailableSpace
+        public long AvailableSpace
         {
             get { return availableSpace; }
             set { availableSpace = value; }
         }
 
-        public Drive(string rootDir, string fileSystem, int totalSize, int availableSpace)
+        public Drive(string rootDir, string fileSystem, long totalSize, long availableSpace)
         {
             this.rootDir = rootDir;
             this.fileSystem = fileSystem;

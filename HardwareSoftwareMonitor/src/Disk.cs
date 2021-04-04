@@ -24,15 +24,15 @@ namespace HardwareSoftwareMonitor.src
             set { interfaceType = value; }
         }
 
-        private int size;
+        private ulong size;
 
-        public int Size
+        public ulong Size
         {
             get { return size; }
             set { size = value; }
         }
 
-        public Disk(string manufacturer, string interfaceType, int size)
+        public Disk(string manufacturer, string interfaceType, ulong size)
         {
             this.manufacturer = manufacturer;
             this.interfaceType = interfaceType;

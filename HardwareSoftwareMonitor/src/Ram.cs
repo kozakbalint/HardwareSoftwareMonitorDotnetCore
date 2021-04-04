@@ -24,26 +24,26 @@ namespace HardwareSoftwareMonitor.src
             set { manufacturer = value; }
         }
 
-        private string model;
+        private string tag;
 
-        public string Model
+        public string Tag
         {
-            get { return model; }
-            set { model = value; }
+            get { return tag; }
+            set { tag = value; }
         }
 
-        private int capacity;
+        private long capacity;
 
-        public int Capacity
+        public long Capacity
         {
             get { return capacity; }
             set { capacity = value; }
         }
-        public Ram(string name, string manufacturer, string model, int capacity)
+        public Ram(string name, string manufacturer, string tag, long capacity)
         {
             this.name = name;
             this.manufacturer = manufacturer;
-            this.model = model;
+            this.tag = tag;
             this.capacity = capacity;
         }
     }

@@ -16,9 +16,9 @@ namespace HardwareSoftwareMonitor.src
             set { name = value; }
         }
 
-        private int vram;
+        private uint vram;
 
-        public int Vram
+        public uint Vram
         {
             get { return vram; }
             set { vram = value; }
@@ -48,7 +48,7 @@ namespace HardwareSoftwareMonitor.src
             set { refreshRate = value; }
         }
 
-        public Gpu(string name, int vram, int verticalRes, int horizontalRes, int refreshRate)
+        public Gpu(string name, uint vram, int verticalRes, int horizontalRes, int refreshRate)
         {
             this.name = name;
             this.vram = vram;
