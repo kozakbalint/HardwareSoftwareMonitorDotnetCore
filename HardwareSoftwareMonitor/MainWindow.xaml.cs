@@ -6,6 +6,8 @@ using Microsoft.Win32;
 using System;
 using System.Linq;
 using System.IO;
+using OpenHardwareMonitor;
+using OpenHardwareMonitor.Hardware;
 
 namespace HardwareSoftwareMonitor
 {
@@ -24,6 +26,7 @@ namespace HardwareSoftwareMonitor
         List<Disk> disks = new List<Disk>();
         List<Drive> drives = new List<Drive>();
         MotherBoard mb;
+        Computer computer;
 
         public MainWindow()
         {
@@ -34,6 +37,8 @@ namespace HardwareSoftwareMonitor
         private void Init()
         {
             softDG.ItemsSource = apps;
+            computer = new Computer() { CPUEnabled = true};
+            computer.Open();
             GetInstalledApps();
             GetCpuInfos();
             GetGpuInfos();
@@ -186,6 +191,20 @@ namespace HardwareSoftwareMonitor
                 cpus.Add(new Cpu(item["Name"].ToString(), item["Manufacturer"].ToString(), Convert.ToInt32(item["NumberOfCores"]), Convert.ToInt32(item["ThreadCount"])));
             }
             searcher = null;
+
+            foreach (var hardwareItem in computer.Hardware)
+            {
+                if (hardwareItem.HardwareType == HardwareType.CPU)
+                {
+                    foreach (var sensor in hardwareItem.Sensors)
+                    {
+                        if (sensor.SensorType == SensorType.Temperature)
+                        {
+                            cpuTemp.Content = $"{sensor.Name} Temp: {sensor.Value}\r\n";
+                        }
+                    }
+                }
+            }
         }
 
         private void GetInstalledApps()
